@@ -3,7 +3,7 @@
 # Step 1 Clone the project
 Clone the project where you want to setup it using the following command
 
-git clone https://github.com/webethics/filter-laravel-admin.git
+git clone https://github.com/webethics/laravel.git
 
 # Step 2 Vendor fodler
 open the command prompt or your server shell and execute the following comands
