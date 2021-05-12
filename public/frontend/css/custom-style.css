@@ -1,0 +1,57 @@
+.innerprofilebtn_div .nav-tabs .nav-item.show .nav-link, .innerprofilebtn_div .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #002AAE;
+    border-color: transparent;
+}
+.innerprofilebtn_div #myTabContent {
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+.innerprofilebtn_div .nav-tabs {
+    border-bottom: 0px;
+    margin-top: 20px;
+}
+.plansection_cont h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: bold;
+    color: #002aae;
+}
+.priceblk_cont ul {
+    padding: 0;
+    list-style: none;
+    display: -ms-inline-grid;
+    display: inline-grid;
+}
+.pricingblk p {
+    color: #fff;
+}
+.buynow_btn a {
+    background: #003595;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+}
+.pricingplan_sec {
+    margin-top: 100px;
+}
+
+
+
+@media (max-width:1600px) {
+
+.innerprofilebtn_div a {
+    margin-right: 0;
+    margin-left: 20px;
+}
+.plansection_cont h2 {
+    font-size: 35px;
+
+}
+	
+.pricingplan_sec {
+    margin-top: 40px;
+}	
+	
+}

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Group_165" data-name="Group 165" transform="translate(-485 -719)">
+    <g id="Group_11" data-name="Group 11" transform="translate(6 98)">
+      <g id="Rectangle_5" data-name="Rectangle 5" transform="translate(484 626)" fill="#fff" stroke="#ff5722" stroke-width="2">
+        <rect width="40" height="40" rx="4" stroke="none"/>
+        <rect x="1" y="1" width="38" height="38" rx="3" fill="none"/>
+      </g>
+      <g id="microsoft-powerpoint" transform="translate(492 624.249)">
+        <g id="Group_10" data-name="Group 10" transform="translate(0 10.626)">
+          <path id="Path_43" data-name="Path 43" d="M363.167,117.377a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5A3.5,3.5,0,0,0,363.167,117.377Z" transform="translate(-345.667 -112.373)" fill="#ff5722"/>
+          <path id="Path_44" data-name="Path 44" d="M281.821,143.748a1.5,1.5,0,0,1-1.5-1.5V139.8a3.492,3.492,0,1,0,3.949,3.949Z" transform="translate(-264.321 -133.744)" fill="#ff5722"/>
+          <path id="Path_45" data-name="Path 45" d="M13.812,10.738a.5.5,0,0,0-.424-.1l-13,3A.5.5,0,0,0,0,14.13v17a.5.5,0,0,0,.424.494l13,2A.5.5,0,0,0,14,33.13v-22A.5.5,0,0,0,13.812,10.738Z" transform="translate(0 -10.626)" fill="#ff5722"/>
+          <path id="Path_46" data-name="Path 46" d="M287.833,72.377h-10a.5.5,0,1,1,0-1h9.5v-17h-9.5a.5.5,0,1,1,0-1h10a.5.5,0,0,1,.5.5v18A.5.5,0,0,1,287.833,72.377Z" transform="translate(-264.333 -51.373)" fill="#ff5722"/>
+          <path id="Path_47" data-name="Path 47" d="M284.833,374.376h-7a.5.5,0,1,1,0-1h7a.5.5,0,0,1,0,1Z" transform="translate(-264.333 -356.372)" fill="#ff5722"/>
+          <path id="Path_48" data-name="Path 48" d="M284.833,310.376h-7a.5.5,0,0,1,0-1h7a.5.5,0,0,1,0,1Z" transform="translate(-264.333 -295.372)" fill="#ff5722"/>
+        </g>
+        <path id="Path_49" data-name="Path 49" d="M85.833,169.043a.5.5,0,0,1-.5-.5v-8a.5.5,0,0,1,.5-.5h2a2.5,2.5,0,0,1,2.5,2.5v1a2.5,2.5,0,0,1-2.5,2.5h-1.5v2.5A.5.5,0,0,1,85.833,169.043Zm.5-4h1.5a1.5,1.5,0,0,0,1.5-1.5v-1a1.5,1.5,0,0,0-1.5-1.5h-1.5Z" transform="translate(-81.333 -142.413)" fill="#fafafa"/>
+      </g>
+    </g>
+    <g id="Rectangle_5-2" data-name="Rectangle 5" transform="translate(485 719)" fill="#fff" stroke="#ff5722" stroke-width="2">
+      <rect width="50" height="50" rx="4" stroke="none"/>
+      <rect x="1" y="1" width="48" height="48" rx="3" fill="none"/>
+    </g>
+    <g id="microsoft-powerpoint-2" data-name="microsoft-powerpoint" transform="translate(495 729)">
+      <g id="Group_10-2" data-name="Group 10">
+        <path id="Path_43-2" data-name="Path 43" d="M363.167,117.377a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5A3.5,3.5,0,0,0,363.167,117.377Z" transform="translate(-339.667 -110.531)" fill="#ff5722"/>
+        <path id="Path_44-2" data-name="Path 44" d="M281.821,143.748a1.5,1.5,0,0,1-1.5-1.5V139.8a3.492,3.492,0,1,0,3.949,3.949Z" transform="translate(-259.746 -131.105)" fill="#ff5722"/>
+        <path id="Path_45-2" data-name="Path 45" d="M13.812,10.772a.416.416,0,0,0-.424-.13l-13,3.912A.641.641,0,0,0,0,15.2v22.17a.623.623,0,0,0,.424.644l13,2.608c.273.055.528-.189.57-.545a.848.848,0,0,0,.006-.1V11.283A.741.741,0,0,0,13.812,10.772Z" transform="translate(0 -10.626)" fill="#ff5722"/>
+        <path id="Path_46-2" data-name="Path 46" d="M287.833,79.373h-10c-.276,0-.5-.306-.5-.684s.224-.684.5-.684h9.5V54.745h-9.5c-.276,0-.5-.306-.5-.684s.224-.684.5-.684h10c.276,0,.5.306.5.684V78.689C288.333,79.067,288.109,79.373,287.833,79.373Z" transform="translate(-258.333 -51.373)" fill="#ff5722"/>
+        <path id="Path_47-2" data-name="Path 47" d="M284.833,374.376h-7a.5.5,0,1,1,0-1h7a.5.5,0,0,1,0,1Z" transform="translate(-258.333 -350.966)" fill="#ff5722"/>
+        <path id="Path_48-2" data-name="Path 48" d="M284.833,310.376h-7a.5.5,0,0,1,0-1h7a.5.5,0,0,1,0,1Z" transform="translate(-258.333 -290.92)" fill="#ff5722"/>
+      </g>
+      <path id="Path_49-2" data-name="Path 49" d="M85.833,169.043a.5.5,0,0,1-.5-.5v-8a.5.5,0,0,1,.5-.5h2a2.5,2.5,0,0,1,2.5,2.5v1a2.5,2.5,0,0,1-2.5,2.5h-1.5v2.5A.5.5,0,0,1,85.833,169.043Zm.5-4h1.5a1.5,1.5,0,0,0,1.5-1.5v-1a1.5,1.5,0,0,0-1.5-1.5h-1.5Z" transform="translate(-80.07 -149.54)" fill="#fafafa"/>
+    </g>
+  </g>
+</svg>
