@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCmsPagesTable extends Migration
+class CreateRolesPermissionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateCmsPagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cms_pages', function (Blueprint $table) {
+        Schema::create('roles_permission', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-			 $table->string('arabic_title');
-			$table->string('slug');
-            $table->text('content');
-            $table->text('arabic_content');
+            $table->integer('role_id');
+            $table->integer('permission_id');
+            $table->datetime('created')->nullable();
+           
         });
     }
 
@@ -30,6 +29,6 @@ class CreateCmsPagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cms_pages');
+        Schema::dropIfExists('roles_permission');
     }
 }

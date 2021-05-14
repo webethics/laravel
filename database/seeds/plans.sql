@@ -1,0 +1,4 @@
+INSERT INTO `plans` (`id`, `plan_id`, `stripe_plan_id`, `title`, `arabic_title`, `slug`, `price`, `description`, `arabic_description`, `status`, `num_of_users`, `mem_length`, `created_at`, `updated_at`, `deleted_at`, `display_order`) VALUES
+(13, 'P-7X6903874W933635TL73MTDA', 'price_1HmlzTDDMOk93J6GCjnWEuXi', 'Yearly', 'سنوي', NULL, 49.00, '<p>Full Year Access</p>', '<p>اشتراك سنوي</p>', 1, 0, 1, '2021-01-07 02:42:52', '2021-01-07 07:49:09', NULL, 2),
+(14, 'P-62V15003WP080734WL73MUDY', 'price_1HmrrYDDMOk93J6GC4vDKflA', 'Monthly', 'اشتراك شهري', NULL, 19.00, '<p>Monthly Access</p>', '<p>اشتراك شهري</p>', 1, 0, 0, '2021-01-07 02:45:03', '2021-02-16 21:03:42', NULL, 1),
+(15, 'P-1K886358N6805420PL73NP2A', 'price_1HmrrYDDMOk93J6GC4vDKflA', 'Lifetime', 'مدى الحياة', NULL, 99.00, '<p>Full Lifetime access</p>', '<p>اشتراك مدى الحياة</p>', 1, 0, 2, '2021-01-07 03:44:08', '2021-01-24 17:55:41', NULL, 3);
