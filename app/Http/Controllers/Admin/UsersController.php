@@ -32,7 +32,7 @@ class UsersController extends Controller
 	public function __construct()
     {
 	    
-        $this->per_page = Config::get('constant.per_page');
+        $this->per_page =1;// Config::get('constant.per_page');
     }
 	
 	public function landing_page()
@@ -493,7 +493,7 @@ class UsersController extends Controller
 		Auth::logout();
 		Session::put('is_admin_login', '1');
 		Session::put('admin_user_id', '');
-		return redirect('admin/login');
+		return redirect('/');
 		
 		
     }

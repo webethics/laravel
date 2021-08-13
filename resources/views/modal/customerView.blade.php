@@ -49,7 +49,7 @@
 			</div>
 
 		
-			<a class="btn btn-primary default"  href="{{url('download-certificate')}}/{{ $user->id }}"  data-user_id="{{ $user->id }}" title="Download Certificate">Donwload Certificate</i> </a>
+			<a class="btn btn-primary default"  href="{{url('download-certificate')}}/{{ $user->id }}"  data-user_id="{{ $user->id }}" title="Download Certificate">Download Certificate</i> </a>
 		</div>
 	</div>
 </div>

@@ -116,7 +116,7 @@ class CustomersController extends Controller
 				if((($age_from!= '' && $age_to=='') || ($age_from== '' && $age_to!='')) || ($age_from >= $age_to)){	
 					$data = array();
 					$data['success'] = false;
-					$data['message'] = "age_error";
+					$data['message'] = "age_first_nameerror";
 					return $data; 
 				}else{
 					$result->whereBetween('age', array($age_from, $age_to));
@@ -209,13 +209,14 @@ class CustomersController extends Controller
 			$success = false;
 		}
 		
-        //abort_unless(\Gate::allows('request_edit'), 403);
+        
 		
 		return Response::json(array(
 		  'success'=>$success,
 		  'data'=>$view
 		 ), 200);
     }
+	
 	public function customer_create_new(CreateCustomerRequest $request){
 		$response = [];
     	$response['success'] = false;

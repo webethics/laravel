@@ -1,6 +1,6 @@
 @extends('admin.layouts.masterlogin')
 @section('content')
-<div class="login-wraper">
+<div class="login-wraper">hlo
     <div class="container">
         <div class="row">
          <div class="login-cont">

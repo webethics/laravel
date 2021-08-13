@@ -41,16 +41,8 @@ Route::group([ 'prefix' => 'admin','middleware' => 'admin','namespace' => 'Admin
 	Route::post('delete/logo/{request_id}',array('uses'=>'SettingsController@deleteLogo'));
 	
 	
-	//cms pages
-	Route::get('cms-pages',array('uses'=>'CmsController@index'));
-	Route::get('cms-pages/edit/{request_id}', 'CmsController@cms_page_edit'); //Edit request
-	Route::get('cms-pages/create/',array('uses'=>'CmsController@cms_page_create')); //Edit User
-	Route::post('cms-pages/delete_page/{request_id}',array('uses'=>'CmsController@page_delete')); //Edit User
-	Route::post('cms-page-new',array('uses'=>'CmsController@cms_page_new')); //Edit User
-	Route::post('cms-page-update',array('uses'=>'CmsController@cms_page_update')); //Edit User
 	
-	//Payment listing 
-	Route::get('paymentlisting',array('uses'=>'SubscriptionController@paymentlisting'));
+
 	
 	// Global Setting 
 	Route::get('settings',array('uses'=>'SettingsController@index'));
@@ -84,7 +76,7 @@ Route::group([ 'prefix' => 'admin','middleware' => 'admin','namespace' => 'Admin
 	Route::post('export_customers',array('uses'=>'CustomersController@export_customers')); //Edit User
 	
 	Route::post('export_users_customers/{id}',array('as'=>'ajax.pagination','uses'=>'UsersController@exportListingCustomers'));
-	Route::post('export_users',array('as'=>'ajax.pagination','uses'=>'UsersController@exportUsers'));
+	// Route::post('export_users',array('as'=>'ajax.pagination','uses'=>'UsersController@exportUsers'));
 	
 	Route::get('download-certificate/{request_id}',array('uses'=>'CustomersController@downloadCertificate')); //Edit User
 	Route::get('manage-customer/{id}', 'CustomersController@manageCustomer');
@@ -146,16 +138,7 @@ Route::group([ 'prefix' => 'admin','middleware' => 'admin','namespace' => 'Admin
 	
 	Route::post('infographics/sortlist/',array('uses'=>'InfographicsController@sortlist')); //Edit User
 	
-	Route::get('listplans',array('uses'=>'PlansController@listplans'));
-	Route::get('plans/edit/{request_id}', 'PlansController@plan_edit'); //Edit Article
-	Route::get('plans/create', 'PlansController@plan_create'); //Edit Article
-	Route::post('plan-update', 'PlansController@update_plan'); //Edit Article
-	Route::post('plan-create', 'PlansController@create_plan'); //Edit Article
-	Route::post('plans/delete_plan/{request_id}',array('uses'=>'PlansController@plan_delete')); //Edit User
-	Route::post('plans/delete_feature/{request_id}',array('uses'=>'PlansController@feature_delete')); //Edit User
-	Route::get('plans/add_features/{request_id}',array('uses'=>'PlansController@add_features')); //Edit User
-	Route::post('add-feature', 'PlansController@add_new_feature'); //Edit Article
-	Route::post('plans/enable-disable',array('uses'=>'PlansController@enableDisable'));
+	
 	
 	
 	Route::get('sub-categories/{category}',array('uses'=>'DashboardController@createSubcategory'));
@@ -166,56 +149,62 @@ Route::group([ 'prefix' => 'admin','middleware' => 'admin','namespace' => 'Admin
 	
 	Route::post('dashboard/delete_subcategory/{request_id}',array('uses'=>'DashboardController@subcategory_delete')); //Edit User
 
-	//Blogs
-	Route::get('blogs',array('uses'=>'BlogController@blogs'));
-	Route::post('blogs',array('uses'=>'BlogController@blogs'));
-	Route::get('blog/create',array('uses'=>'BlogController@create')); //Create category
-	Route::post('blog/create', 'BlogController@store'); //Create Category submit
-	Route::get('blog/edit/{request_id}', 'BlogController@blog_edit'); //Category Edit
-	Route::post('blog/update',array('uses'=>'BlogController@update_blog'));
-	Route::post('blog/delete/{request_id}',array('uses'=>'BlogController@blog_delete')); //Delete Category
-	Route::post('blog/enable-disable',array('uses'=>'BlogController@enableDisableBlog'));
-	Route::post('blog/sortlist',array('uses'=>'BlogController@sortList')); //Sort Category
-	Route::get('blog/image_downlad/{request_id}',array('uses'=>'BlogController@downloadImage')); //Download Image
-	Route::post('blog_image/delete/{request_id}',array('uses'=>'BlogController@deleteBlogImage')); //Delete Image
-	Route::post('blog/temp-save-feature-media',array('uses'=>'BlogController@tempSaveFeatureMedia'));
-	Route::post('blog/fetch_blog_image',array('uses'=>'BlogController@fetchImage'));
-
-	//Blogs category
-
-	Route::get('blog-categories',array('uses'=>'BlogController@blogsCategories'));
-	Route::get('blog-categories/create',array('uses'=>'BlogController@createBlogsCategories')); //Create category
-	Route::post('blog-categories/save', 'BlogController@storeBlogsCategories'); //Create Category submit
-	Route::get('blog-categories/edit/{request_id}', 'BlogController@editBlogsCategories'); //Category Edit
-	Route::post('blog-categories/update',array('uses'=>'BlogController@updateBlogsCategories'));
-	Route::post('blog-categories/delete/{request_id}',array('uses'=>'BlogController@deleteBlogsCategories')); //Delete Category
 	
-	//Auction
-	Route::get('auctions',array('uses'=>'AuctionsController@auction'));
-	Route::post('auctions',array('uses'=>'AuctionsController@auction'));
-	Route::get('auctions/create',array('uses'=>'AuctionsController@create'));
-	Route::post('auctions/create',array('uses'=>'AuctionsController@store'));
-	Route::get('auctions/edit/{request_id}',array('uses'=>'AuctionsController@auction_edit'));
-	Route::post('auctions/update',array('uses'=>'AuctionsController@auction_update'));
-	Route::post('auctions/delete_game/{request_id}',array('uses'=>'AuctionsController@delete_auction'));
-	Route::post('auctions/enable-disable',array('uses'=>'AuctionsController@enableDisableAuction'));
-	Route::get('auctions/image_downlad/{request_id}/{media_id?}',array('uses'=>'AuctionsController@downloadFeatureImage')); //Download Image
-	Route::post('auction_image/delete/{request_id}',array('uses'=>'AuctionsController@deleteAuctionImage')); //Delete Image
-
-	//upload Temp media
-	Route::post('auctions/temp-save-media',array('uses'=>'AuctionsController@tempSaveMedia'));
-	Route::post('auctions/temp-save-feature-media',array('uses'=>'AuctionsController@tempSaveFeatureMedia'));
-	Route::post('auctions/fetch_auction_image',array('uses'=>'AuctionsController@fetchAuctionImages'));
-	Route::post('auctions/remove_auction_image',array('uses'=>'AuctionsController@remove_auction_image'));
+	
+	
+	
 });	
+
+Route::group(['namespace' => 'Admin'], function () {
+Route::get('/', 'AdminController@login');
+});
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
 	Route::post('checklogin','AdminController@checklogin');
 	Route::post('sendpasswordemail','AdminController@sendpasswordemail');
-	Route::get('/login', 'AdminController@login');
+
 	Route::get('/forgot-password', 'AdminController@forgot_password');
 	Route::get('/password/reset/{token}', 'AdminController@reset_password');
 	Route::post('/password-reset', 'AdminController@reset');
 	// Route::get('forgotpassword', 'AdminController@forgotpassword');
 
 });
+
+// Leads Controller
+
+	Route::get('admin/leads', 'Admin\LeadsController@leads');
+	Route::post('admin/store', 'Admin\LeadsController@store');
+
+	Route::post('admin/leads/update/{request_id}', 'Admin\LeadsController@update_leads');
+	Route::post('admin/lead/view/{request_id}', 'Admin\LeadsController@view_lead');
+	Route::post('admin/lead/edit/{id}', 'Admin\LeadsController@edit_lead');
+	Route::post('admin/leads/delete/{request_id}', 'Admin\LeadsController@delete_leads');
+	Route::get('searchleads', 'Admin\LeadsController@leads_Search');
+	// Route::get('searchleads', 'Admin\LeadsController@add_comment_modal');
+	Route::post('admin/addcommentview/{id}', 'Admin\LeadsController@add_comment_modal');
+	Route::post('admin/addreasonmodal/{id}', 'Admin\LeadsController@add_reason_modal');
+
+	
+// Leads Comments Controller
+	Route::post('admin/comment', 'Admin\CommentsController@add_comment');
+	Route::post('admin/editcomment/{id}', 'Admin\CommentsController@edit_comment');
+	Route::post('admin/updatecomment/{id}', 'Admin\CommentsController@update_comment');
+
+	Route::post('admin/leadlostreason', 'Admin\CommentsController@add_reason');
+// HR Controlller
+
+	Route::get('admin/hrpanel', 'Admin\HrMenuController@loadview');
+	Route::get('admin/edit', 'Admin\HrMenuController@edit');
+	Route::get('admin/add', 'Admin\HrMenuController@add');
+	Route::post('admin/store/employee', 'Admin\HrMenuController@add_employee');
+	Route::post('admin/store/hr', 'Admin\HrMenuController@add_hr');
+	Route::post('admin/hrpanel/view/{request_id}', 'Admin\HrMenuController@view_hr');
+	Route::post('admin/employee/delete/{request_id}', 'Admin\HrMenuController@delete_employee');
+	Route::get('admin/employee/edit/{id}', 'Admin\HrMenuController@edit_employee');
+
+// Bugs Controller
+
+	Route::get('admin/bugs', 'Admin\BugsController@loadview');
+
+	
+

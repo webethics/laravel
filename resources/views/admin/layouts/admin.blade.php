@@ -43,6 +43,9 @@
                 @yield('content')
 			</div>
         </main>  
+
+
+		
 <script src="{{ asset('js/vendor/jquery-3.3.1.min.js')}}"></script>
 <script src="{{ asset('js/vendor/jquery-ui-1.12.0.min.js')}}"></script>
 <script src="{{ asset('js/vendor/bootstrap.bundle.min.js')}}"></script>
@@ -76,7 +79,13 @@
 @yield('auditJs')
 <!-- email template ckeditor js -->
 @yield('ckeditor') 
+<!---    UserJs module/leads.js  -->
+@yield('leadjs') 
 
+@yield('hrjs') 
+<script src="{{ asset('js/vendor/select2.full.js')}}"></script>
+<!---    CommentJS module/comments.js  -->
+@yield('CommentJS') 
 @yield('cancelsubscriptionJsAccountBlade')
 
 @include('admin.common_layout.footer')

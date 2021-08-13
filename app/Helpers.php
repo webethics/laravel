@@ -19,6 +19,9 @@ use App\Models\CityLists;
 use App\Models\Company;
 use App\Models\Plan;
 use Carbon\Carbon;
+use App\Models\Bidder;
+use App\Models\Leads;
+use App\Models\Upwork_id;
 
 use Illuminate\Support\Str;
 
@@ -405,6 +408,9 @@ function getDistrictNameByDistrictId($district_id){
 function viewDateFormat($date){
 	return Carbon::parse($date)->format(config('constant.FRONT_DATE_FORMAT'));
 }
+// function currentDate($date){
+// 	return Carbon::parse($date)->format(config('constant.FRONT_DATE_FORMAT'));
+// }
 function create_slugify($string, $replace = array(), $delimiter = '-') {
 		// https://github.com/phalcon/incubator/blob/master/Library/Phalcon/Utils/Slug.php
 		if (!extension_loaded('iconv')) {
@@ -540,3 +546,88 @@ function excerpt($data,$words_length,$end)
 {
 	return Str::words($data, $words_length,$end);
 }
+
+
+// Leads Listing And insertion
+
+function leadslisting(){
+
+	$Leads = Leads::orderBy('id', 'DESC')->get();
+	
+	return $Leads;
+	
+  }
+  function lead_by_id($id){
+	$leads_by_id = Leads::where('id',$id)->get();
+	return $leads_by_id;
+  }
+
+//   All Bidders
+  function bidder_all(){
+
+	$bidder = Bidder::all();
+	return $bidder;
+	
+  }
+
+//   ALL Upwork Account
+  function upwork_all(){
+
+	$upwork_id = Upwork_id::all();
+	return $upwork_id;
+	
+	
+  }
+
+//   upwork id names
+function upwork_id_names(){
+	$Leads = leadslisting();
+    return $upwork_id_name;
+	
+  }
+
+  function viewTimeFormat($time){
+	
+	// Carbon::parse($p->created_at)->diffForHumans();
+	return Carbon::parse($time)->toDayDateTimeString();
+}
+
+
+
+
+// Upwork Names Based on ID
+//   function upwork_id_names_idbased($id){
+// 	$leads = Leads::where('id','2')->get();
+	
+     
+// 		foreach ($leads as $ld) {
+
+			
+// 			$upworid = $ld->upwork_id;
+
+// 			//  pr($upworkid);
+// 		}
+// 		foreach($upworid as $u){
+// 			$upwork_id_name = Upwork_id::select('upwork_id_name')->where('id',$u)->get();
+// 			// pr($upwork_id_name);
+// 			return $upwork_id_name;
+// 		}
+		
+	
+	
+//   }
+
+//   Selected Bidder names
+
+// function bidder_names(){
+// 	$Leads = Leads::orderBy('id', 'DESC')->get();
+	
+     
+// 		foreach ($Leads as $ld) {
+// 			$bidderid = $ld->bidder_id;
+// 		}
+	
+// 	$biddername = Bidder::select('bidder_name')->where('id',$bidderid)->get();
+// 	return $biddername;
+	
+//   }

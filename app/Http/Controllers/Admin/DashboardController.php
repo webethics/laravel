@@ -12,7 +12,11 @@ use App\Models\ArabicArticle;
 use App\Models\Category;
 use App\Models\BlogCategory;
 use App\Models\Blog;
-use App\Models\Plan;
+use App\Models\Leads;
+use DB;
+
+use Carbon\Carbon;
+// use App\Models\Plan;
 use App\Models\User;
 use Response;
 
@@ -27,30 +31,48 @@ class DashboardController extends Controller
 	public function index(){
 		
 		access_denied_user('dashboard_listing');
+		// DB::connection()->enableQueryLog();
+	
+		$leads = Leads::whereMonth('created_at', Carbon::now()->month)
+		->count();
 
-		$plans['count'] = Plan::count();
-		$plans['icon'] = 'iconsminds-dollar';
-		$plans['backgroundColor'] = 'aquamarine';
-		$plans['url'] = '/admin/listplans';
+		$hired = Leads::whereMonth('created_at', Carbon::now()->month)
+		->where('status', 2)
+		->count();
 
-		$users['count'] = User::where('role_id', '!=', 1)->count();
-		$users['icon'] = 'simple-icon-user';
-		$users['backgroundColor'] = 'lightgreen';
-		$users['url'] = '/admin/customers';
+		$lost = Leads::whereMonth('created_at', Carbon::now()->month)
+		->where('status', 3)
+		->count();
 
-		$blogs['count'] = Blog::count();
-		$blogs['icon'] = 'simple-icon-grid';
-		$blogs['backgroundColor'] = '#f6b21b85';
-		$blogs['url'] = '/admin/blogs';
+		$unresponsive = Leads::whereMonth('created_at', Carbon::now()->month)
+		->where('status', 4)
+		->count();
+	
+		
+		return view('admin.dashboard.index',compact('leads','hired','lost','unresponsive'));
+		// $plans['count'] = Plan::count();
+		// $plans['icon'] = 'iconsminds-dollar';
+		// $plans['backgroundColor'] = 'aquamarine';
+		// $plans['url'] = '/admin/listplans';
+
+		// $users['count'] = User::where('role_id', '!=', 1)->count();
+		// $users['icon'] = 'simple-icon-user';
+		// $users['backgroundColor'] = 'lightgreen';
+		// $users['url'] = '/admin/customers';
+
+		// $blogs['count'] = Blog::count();
+		// $blogs['icon'] = 'simple-icon-grid';
+		// $blogs['backgroundColor'] = '#f6b21b85';
+		// $blogs['url'] = '/admin/blogs';
 
 
-		$blogCategory['count'] = BlogCategory::count();
-		$blogCategory['icon'] = 'simple-icon-list';
-		$blogCategory['backgroundColor'] = 'gainsboro';
-		$blogCategory['url'] = '/admin/blog-categories';
+		// $blogCategory['count'] = BlogCategory::count();
+		// $blogCategory['icon'] = 'simple-icon-list';
+		// $blogCategory['backgroundColor'] = 'gainsboro';
+		// $blogCategory['url'] = '/admin/blog-categories';
 
-		$dashboard = array('Plans' => $plans, 'Users' => $users, 'Blogs' => $blogs, 'Blog Categories' => $blogCategory);
-		return view('admin.dashboard.index', compact('dashboard'));
+		// $dashboard = array('Plans' => $plans, 'Users' => $users, 'Blogs' => $blogs, 'Blog Categories' => $blogCategory);
+		return view('admin.dashboard.index');
 		/*$listTemplates =  Article::where('type','template')->count();
 		$listForms =  Article::where('type','form')->count();
 		$listInfographics =  Article::where('type','infographic')->count();

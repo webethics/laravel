@@ -5,11 +5,17 @@
 		
 		 @php    
 			$roleArray = Config::get('constant.role_id');
-			$dashboardactive='';  $custactive='';	 $configactive='';  	$roleactive='';$cmsactive='';$planactive='';$paymentactive='';
+			$dashboardactive='';  $custactive='';	 $configactive='';  	$roleactive=''; $bugsactive=''; $leadsactive=''; $hractive='';
 			
 			$emailactive ='';$site_sactive ='';$accactive  ='';
 		 @endphp
 		 
+		 @if(collect(request()->segments())->last()=='hrpanel')
+		 @php
+	      $hractive ='active'
+	     @endphp
+		 @endif
+
 		 @if(collect(request()->segments())->last()=='account')
 		 @php
 	      $accactive ='active'
@@ -38,40 +44,34 @@
 	      $emailactive ='active'
 	     @endphp
 		 @endif
+
+		 @if(collect(request()->segments())->last()=='leads')
+		 @php
+	      $leadsactive ='active'
+	     @endphp
+		 @endif
+
 		 @if(collect(request()->segments())->last()=='roles')
 		 @php
 	      $roleactive ='active'
 	     @endphp
 		 @endif
 		 
-		@if(collect(request()->segments())->last()=='cms-pages')
+		@if(collect(request()->segments())->last()=='bugs')
 		 @php
-	      $cmsactive ='active'
+	      $bugsactive ='active'
 	     @endphp
 		 @endif
 		 
-		@if(collect(request()->segments())->last()=='paymentlisting')
-		 @php
-	      $paymentactive ='active'
-	     @endphp
-		 @endif
-		@if(collect(request()->segments())->last()=='listplans')
-		 @php
-	      $planactive ='active'
-	     @endphp
-		 @endif
+	
+		
 		 @if(collect(request()->segments())->last()=='blogs')
 		 @php
 	      $blogsactive ='active'
 	     @endphp
 		 @endif
 
-		 @if(collect(request()->segments())->last()=='auctions')
-		 @php
-	      $auctionsactive ='active'
-	     @endphp
-		 @endif
-		 
+	
 			<ul class="list-unstyled">
 				
 					@if(check_role_access('dashboard_listing'))
@@ -90,15 +90,39 @@
 						</a>
 					</li>
 					@endif
+					<li class="{{$leadsactive}}">
+						<a href="{{url('/admin/leads')}}">
+							<i class="iconsminds-dollar	"></i>
+							<span>Leads</span>
+						</a>
+					</li>
 					@if(check_role_access('customer_listing'))
 						<li class="{{$custactive}}">
 							<a href="{{url('/admin/customers')}}">
 								<i class="simple-icon-user"></i>
-								<span>Customers</span>
+								<span>Users</span>
 							</a>
 						</li>
 					@endif
 					
+				
+
+					<li class="{{$hractive}}">
+						<a href="{{url('/admin/hrpanel')}}">
+							<i class="simple-icon-grid"></i>
+							<span>HR</span>
+						</a>
+					</li>
+
+					<li class="{{$bugsactive}}">
+						<a href="{{url('/admin/bugs')}}">
+						<i class="simple-icon-docs"></i>
+							<span>Bugs</span>
+						</a>
+					</li>
+
+
+
 					@if(check_role_access('email_listing'))
 					<li class="{{$emailactive}}">
 						<a href="{{url('/admin/emails')}}">
@@ -116,32 +140,12 @@
 					</li>
 					@endif
 
-					@if(check_role_access('auction_listing'))
-					<li class="{{$auctionsactive ?? '' }}">
-						<a href="{{url('/admin/auctions')}}">
-							<i class="simple-icon-list"></i>
-							<span>Listing</span>
-						</a>
-					</li>
-					@endif
-
-					@if(check_role_access('blog_listing'))
-					<li class="{{$blogsactive ?? '' }}">
-						<a href="{{url('/admin/blogs')}}">
-							<i class="simple-icon-grid"></i>
-							<span>Blogs</span>
-						</a>
-					</li>
-					@endif
+				
 
 					
-					
-					<li class="{{$planactive}}">
-						<a href="{{url('/admin/listplans')}}">
-							<i class="iconsminds-dollar	"></i>
-							<span>Plans</span>
-						</a>
-					</li>
+				
+
+				
 					
 					
 					<!--@if(check_role_access('roles_listing'))
@@ -153,20 +157,9 @@
 					</li> 
 					@endif -->
 					
-					<li class="{{$cmsactive}}">
-						<a href="{{url('/admin/cms-pages')}}">
-							<i class="simple-icon-docs"></i>
-							<span>CMS Pages</span>
-						</a>
-					</li>
+				
 					
 					
-					<li class="{{$paymentactive}}">
-						<a href="{{url('/admin/paymentlisting')}}">
-							<i class="simple-icon-paypal"></i>
-							<span>Payments</span>
-						</a>
-					</li>
 					
 
 			</ul>
